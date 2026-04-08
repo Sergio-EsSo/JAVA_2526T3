@@ -2,10 +2,10 @@ package cuentas;
 
 public class Cuenta {
 
-	private float saldo;
-	private int numeroConsignaciones = 0;
-	private int numeroRetiros = 0;
-	private float tasaAnual; // en porcentaje
+	protected float saldo;
+	protected int numeroConsignaciones = 0;
+	protected int numeroRetiros = 0;
+	protected float tasaAnual; // en porcentaje
 	
 	/* Atributo que define la comisión mensual que se cobra a una cuenta bancaria */
 	protected float comisionMensual = 0;	
