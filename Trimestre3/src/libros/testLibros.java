@@ -8,7 +8,7 @@ public class testLibros {
 
     public static void main(String[] args) {
         
-        List<Libro> coleccion = new ArrayList<Libro>();
+        List<Libro> coleccion = new ArrayList<>();
 
         Libro libroG = new Libro("Cien años de soledad", "Gabriel García Márquez");
         libroG.setPrecio(45000);
@@ -27,8 +27,10 @@ public class testLibros {
         coleccion.add(libroUNC);
         coleccion.add(novelaH);
 
-        for(Libro lib: coleccion)
+        for(Libro lib: coleccion){
             System.out.println(lib+"\n------");
+            System.out.println("Prestado: "+lib.isPrestado());
+        }
 
     }
 }

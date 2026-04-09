@@ -7,6 +7,9 @@ public class Libro {
     protected String autor;
     protected double precio = 0d;
 
+    //mejora para implementar una bibioteoocoeoaocoaocoaoaoo
+    protected boolean prestado = false;
+
     // Constructor 
     public Libro(String titulo, String autor) {
         this.titulo = titulo;
@@ -41,7 +44,32 @@ public class Libro {
     // Métodos propios 
 
     // Prestar
+    public void prestar(){
+        if(prestado==false){
+            System.out.println("ACABAS DE PRESTAR.....");
+            System.out.println(this.toString());
+            prestado = true;
+        }
+        else
+            System.out.println("ESE LIBRO YA ESTÁ PRESTADO......");
+    }
 
     // Devolver
-    
+    public void devolver(){
+        if(prestado){
+            System.out.println("NOS ACABAN DE DEVOLVER.......");
+            System.out.println(this.toString());
+            prestado = false;
+        }
+        else
+            System.out.println("ESTE LIBRO NO ESTÁ PRESTADO");
+    }
+
+    public boolean isPrestado() {
+        return prestado;
+    }
+
+    public void setPrestado(boolean prestado) {
+        this.prestado = prestado;
+    }
 }
