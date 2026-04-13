@@ -8,13 +8,13 @@ public class inmueble {
     public static final Map<String, Double> valor_m2 = new HashMap<>();
 
     public static void poblar(){
-        valor_m2.put("Casa rural", 1500000d);
-        valor_m2.put("Casa en conjunto cerrado", 2500000d);
-        valor_m2.put("Casa independiente", 3000000d);
+        valor_m2.put("Casa rural", 1500.0);
+        valor_m2.put("Casa urbanizacion", 2500d);
+        valor_m2.put("Casa independiente", 3000d);
         valor_m2.put("Apartaestudio", 1500000d);
-        valor_m2.put("Apartamento familiar", 2000000d);
-        valor_m2.put("Local comercial", 3000000d);
-        valor_m2.put("Oficina", 3500000d);
+        valor_m2.put("Apartamento familiar", 2000d);
+        valor_m2.put("Local comercial", 3000d);
+        valor_m2.put("Oficina", 3500d);
     }
 
     protected int id;
@@ -28,8 +28,8 @@ public class inmueble {
         this.area = area;
         this.direccion = dir;
     }
-    protected double calcularPrecioVenta(double valorUd){
-        return precioVenta = area*valorUd;
+    protected double calcularPrecioVenta(){
+        return precioVenta;
     }
     //getters setters
     public int getId(){
@@ -59,6 +59,6 @@ public class inmueble {
     @Override
     public String toString(){
         return id+":\n"+area+"m² en "+direccion+"\n-------\n"
-        +precioVenta+"€";
+        +precioVenta+"$";
     }
 }
