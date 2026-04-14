@@ -10,6 +10,6 @@ public class apartamento extends vivienda {
     public String toString(){
         return id+":\n"+area+"m² en "+direccion+"\nHabitaciones: "
         +numHab+"\nBaños: "+numBan+"\n-------\n"
-        +precioVenta+"€";
+        +precioVenta+"$";
     }
 }
