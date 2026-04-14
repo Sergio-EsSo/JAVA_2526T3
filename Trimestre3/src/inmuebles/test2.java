@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import inmuebles.local.tipo;
+
 public class test2 {
 
     public static void main(String[] args) {
@@ -27,6 +29,12 @@ public class test2 {
         //casa independiente
         casaIndependiente puigdemont = new casaIndependiente(2020, 100, "Las Ramblas 32", 8, 2, 3);
         lares.add(puigdemont);
+        //local Comercial
+        localComercial geles = new localComercial(8989, 45, "O carallo 29", tipo.interno, "Jones & Misco Co.");
+        lares.add(geles);
+        //oficina
+        oficina corruptos = new oficina(91, 430, "Diablo 54", tipo.calle, false);
+        lares.add(corruptos);
 
         double valorTotal = 0d;
 
