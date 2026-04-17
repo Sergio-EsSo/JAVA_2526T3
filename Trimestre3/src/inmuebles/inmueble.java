@@ -8,10 +8,10 @@ public class inmueble {
     public static final Map<String, Double> valor_m2 = new HashMap<>();
 
     public static void poblar(){
-        valor_m2.put("Casa rural", 1500.0);
+        valor_m2.put("Casa rural", 1500d);
         valor_m2.put("Casa urbanizacion", 2500d);
         valor_m2.put("Casa independiente", 3000d);
-        valor_m2.put("Apartaestudio", 1500000d);
+        valor_m2.put("Apartaestudio", 1500d);
         valor_m2.put("Apartamento familiar", 2000d);
         valor_m2.put("Local comercial", 3000d);
         valor_m2.put("Oficina", 3500d);

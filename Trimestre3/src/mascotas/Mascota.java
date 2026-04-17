@@ -5,6 +5,7 @@ public class Mascota {
     protected String nombre;
     protected int edad;
     protected String color;
+    protected double precioBase = 340.0d;
 
     public String getNombre() {
         return nombre;
@@ -29,6 +30,10 @@ public class Mascota {
         this.nombre = nom;
         this.edad = edad;
         this.color = col;
+    }
+
+    public double calcularPrecioVenta(){
+        return precioBase;
     }
 
     //metodos propios

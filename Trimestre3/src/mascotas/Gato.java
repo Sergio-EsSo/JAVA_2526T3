@@ -4,6 +4,7 @@ public class Gato extends Mascota {
 
     protected double altura; //altura de salto
     protected double longitud; //longitud de salto
+    protected double precioGato = 215d;
 
     public Gato(String nombre, int edad, String color, double alt, double lon){
         super(nombre, edad, color);
@@ -28,6 +29,11 @@ public class Gato extends Mascota {
     public void sonido(){
         super.sonido();
         System.out.println("Los gatos maúllan y ronronean");
+    }
+
+    @Override
+    public double calcularPrecioVenta(){
+        return super.calcularPrecioVenta()+precioGato;
     }
 
     @Override

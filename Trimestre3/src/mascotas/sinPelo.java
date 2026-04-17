@@ -6,6 +6,8 @@ public class sinPelo extends Gato {
         esfinge, elfo, donskoy
     } protected razaSP raza;
 
+    protected double porcentaje = 0.35;
+
     public sinPelo(String nombre, int edad, String color, double alt, double lon, razaSP raza) {
         super(nombre, edad, color, alt, lon);
         this.raza = raza;
@@ -19,8 +21,13 @@ public class sinPelo extends Gato {
     }
 
     @Override
+    public double calcularPrecioVenta(){
+        return super.calcularPrecioVenta()*(1+porcentaje);
+    }
+
+    @Override
     public String toString() {
         return "sinPelo [nombre=" + nombre + ", altura=" + altura + ", edad=" + edad + ", color=" + color
-                + ", longitud=" + longitud + ", raza=" + raza + "]";
+                + ", longitud=" + longitud + ", raza=" + raza + ". Precio="+ calcularPrecioVenta()+ "]";
     }
 }

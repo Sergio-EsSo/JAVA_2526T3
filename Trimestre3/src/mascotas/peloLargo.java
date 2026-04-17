@@ -6,6 +6,8 @@ public class peloLargo extends Gato {
         angora, himalayo, balines, somali
     } protected peloL raza;
 
+    protected double porcentaje = 0.38;
+
     public peloL getRaza() {
         return raza;
     }
@@ -19,8 +21,13 @@ public class peloLargo extends Gato {
     }
 
     @Override
+    public double calcularPrecioVenta(){
+        return super.calcularPrecioVenta()*(1+porcentaje);
+    }
+
+    @Override
     public String toString() {
         return "peloLargo [nombre=" + nombre + ", altura=" + altura + ", edad=" + edad + ", color=" + color
-                + ", longitud=" + longitud + ", raza=" + raza + "]";
+                + ", longitud=" + longitud + ", raza=" + raza + ". Precio="+ calcularPrecioVenta()+ "]";
     }   
 }
