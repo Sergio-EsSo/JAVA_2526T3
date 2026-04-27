@@ -12,11 +12,12 @@ public class testeoConDosEtapas{
 		
 		// 1. Creamos la lista de competidores
         List<Ciclista> peloton = new ArrayList<>();
-        peloton.add(new Ciclista(10, "Nairo Quintana"));
-        peloton.add(new Ciclista(25, "Egan Bernal"));
-        peloton.add(new Ciclista(7, "Tadej Pogačar"));
-        peloton.add(new Ciclista(1, "Jonas Vingegaard"));
-        peloton.add(new Ciclista(44, "Rigoberto Urán"));
+        peloton.add(new Escalador(10, "Nairo Quintana",2.5d, 8));
+        peloton.add(new Escalador(25, "Egan Bernal", 2.4d, 6.7d));
+        peloton.add(new Velocista(7, "Tadej Pogačar", 11.7d, 16.4d));
+        peloton.add(new Velocista(1, "Jonas Vingegaard", 12.4d, 18.3d));
+        peloton.add(new ContraRelojista(44, "Rigoberto Urán", 18.8d));
+        peloton.add(new ContraRelojista(66, "Raspidin Mac", 23.4d));
 
         //2. SIMULACIÓN ETAPA 1
         System.out.println("--- INICIANDO ETAPA 1 (Montaña) ---");
