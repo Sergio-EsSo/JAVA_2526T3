@@ -41,9 +41,9 @@ public class testCiclismo {
 
         System.out.println("RESULTADOS de la etapa 2:");
         for(Ciclista ista: ciclista){
-            int acumPrevio = ista.getTiempoAcumulado();
+            //int acumPrevio = ista.getTiempoAcumulado();
             ista.correrEtapa(3600, 7200);
-            ista.setTiempoAcumulado(acumPrevio+ista.getTiempo());
+            //ista.setTiempoAcumulado(acumPrevio+ista.getTiempo());
         }
         
         System.out.print("\nClasificación de ciclistas...\n");
