@@ -41,18 +41,16 @@ public class Velocista extends Ciclista {
     }
 
     @Override
-    public void correrEtapa(int tiempoMin, int tiempoMax){
+    public void correrEtapa(int tiempoMin, int tiempoMax) {
         Random rn = new Random();
+        int tiempoBase = rn.nextInt((tiempoMax - tiempoMin) + 1) + tiempoMin;
+        
+        // Aplicamos la bonificación del velocista
+        int tiempoEtapa = tiempoBase - (int)((7 * potenciaPromedio) + (5 * velocidadPromedio));
 
-        //Generamos un numero aleatorio entre el mínimo y el máximo inclusive
-        //formula: rn.nextInt((max-min)+1)+min
-        int tiempoEtapa = rn.nextInt((tiempoMax-tiempoMin)+1)+tiempoMin;
+        this.tiempo = tiempoEtapa;
+        this.tiempoAcumulado += tiempoEtapa;
 
-        this.tiempo=tiempoEtapa;
-        this.tiempoAcumulado+=tiempoEtapa;
-
-        System.out.println(nombre+" ha terminado la etapa en "+tiempoEtapa+" segundos.");
-    } 
-    
-
+        System.out.println(nombre + " ha terminado la etapa en " + tiempoEtapa + " segundos.");
+    }
 }
