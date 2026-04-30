@@ -1,7 +1,6 @@
 package bucle;
 
 import java.util.ArrayList;
-//import java.util.Vector;
 import java.util.Scanner;
 
 public class Equipo {
