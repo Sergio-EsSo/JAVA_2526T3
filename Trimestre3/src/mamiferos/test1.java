@@ -19,6 +19,9 @@ public class test1 {
             if(mam instanceof Ornitorrinco){
                 ((Ornitorrinco) mam).ponerHuevos(); //casteado, porque solo ornitorrinco lo tiene
             }
+            if(mam instanceof Murcielago){
+                ((Murcielago) mam).volar();
+            }
             System.out.println("-------");
         }
     }
