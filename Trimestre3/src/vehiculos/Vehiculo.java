@@ -1,6 +1,6 @@
 package vehiculos;
 
-public class Vehiculo {
+abstract class Vehiculo {
 
     protected int velocidadActual;
     protected int velocidadMaxima;
@@ -11,9 +11,10 @@ public class Vehiculo {
     }
 
     public void imprimir(){
-        System.out.println();
+        System.out.println("Velocidad actual: "+velocidadActual+"km/h");
+        System.out.println("Velocidad máxima: "+velocidadMaxima+"km/h");
     }
 
-    
-
+    public abstract void acelerar(int incremento);
+    public abstract void frenar(int decremento);
 }
