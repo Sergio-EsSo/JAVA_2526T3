@@ -26,37 +26,42 @@ public class Peaje {
 	public String getNombre() {
 		return nombre;
 	}
-	private void setNombre(String nom) {
+	/*private void setNombre(String nom) {
 		this.nombre = nom;
-	}
+	}*/
 	public String getDepartamento() {
 		return departamento;
 	}
-	private void setDepartamento(String dept) {
+	/*private void setDepartamento(String dept) {
 		this.departamento = dept;
-	}
+	}*/
 	public void anadirVehiculo(Vehiculo vehiculo) {
 		vehiculos.add(vehiculo);
 	}
 
 	public int calcularPeaje(Vehiculo vehiculo) {
+		int totalPagar = 0;
+
 		if (vehiculo instanceof Carro) {
 			totalCarros++;
-			totalPeaje += Carro.valorPeaje;
-			return Carro.valorPeaje;
+			totalPagar = Carro.valorPeaje;
 		} 
         else if (vehiculo instanceof Moto) {
 			totalMotos++;
-			totalPeaje += Moto.valorPeaje;
-			return Moto.valorPeaje;
+			totalPagar = Moto.valorPeaje;
 		} 
         else if (vehiculo instanceof Camion) {
 			totalCamiones++;
 			Camion camion = (Camion) vehiculo;
-			int peajeCamion = camion.numeroEjes * camion.valorPeajeEje;
-			totalPeaje += peajeCamion;
-			return peajeCamion;
-		} 
+			totalPagar = camion.getNumeroEjes() * camion.getValorPeajeEje();
+		}
+
+		if(totalPagar > 0){
+			vehiculo.peajeAcumulado += totalPagar;
+			totalPeaje += totalPagar;
+			return totalPagar;
+		}
+
         else {
 			return -1;
 		}
@@ -72,5 +77,18 @@ public class Peaje {
 		int totalVehiculos = totalCarros + totalMotos + totalCamiones;
 		System.out.println("Total de vehículos = " + totalVehiculos);
 		System.out.println("Dinero total = $" + totalPeaje);
+	}
+
+	public void imprimirMejorado(Persona p){
+		System.out.println("> Informe del Peaje para: " + p.getNombre());
+        int granTotal = 0;
+            
+        for (Vehiculo v : p.getVehiculosPropiedad()) {
+            System.out.println("- Vehículo Placa: "+v.placa+" -> Pagado: $"+v.peajeAcumulado);
+            granTotal += v.peajeAcumulado;
+        }
+            
+        System.out.println("· TOTAL PAGADO: $"+granTotal);
+        System.out.println("-------------------------------------------");
 	}
 }

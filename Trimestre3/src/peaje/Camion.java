@@ -15,10 +15,16 @@ public class Camion extends Vehiculo {
 	public int getValorPeajeEje() {
 		return valorPeajeEje;
 	}
-
 	static void setValorPeajeEje(int valorEje) {
 		valorPeajeEje = valorEje;
 	}
+	public int getNumeroEjes() {
+		return numeroEjes;
+	}
+	public void setNumeroEjes(int numeroEjes) {
+		this.numeroEjes = numeroEjes;
+	}
+	
 
 	void imprimir() {
 		System.out.println("Placa = " + placa);
