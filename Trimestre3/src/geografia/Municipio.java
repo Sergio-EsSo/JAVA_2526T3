@@ -19,38 +19,38 @@ public class Municipio {
 		return nombre;
 	}
 
-	private void setNombre(String nombre) {
+	/*private void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
+	}*/
 
 	public int getPoblación() {
 		return población;
 	}
 	
-	private void setPoblación(int población) {
+	/*private void setPoblación(int población) {
 		this.población = población;
-	}
+	}*/
 
 	public double getTemperaturaMedia() {
 		return temperaturaMedia;
 	}
 
-	private void setTemperaturaMedia(double temperaturaMedia) {
+	/*private void setTemperaturaMedia(double temperaturaMedia) {
 		this.temperaturaMedia = temperaturaMedia;
-	}
+	}*/
 
 	public double getAltitud() {
 		return altitud;
 	}
 
-	private void setAltitud(double altitud) {
+	/*private void setAltitud(double altitud) {
 		this.altitud = altitud;
-	}
+	}*/
 
 	public void imprimir() {
 		System.out.println("Nombre = " + getNombre());
 		System.out.println("Población = " + getPoblación());
-		System.out.println("Temperatura promedio (C) = " + getTemperaturaMedia());
-		System.out.println("Altitud (metros) = " + getAltitud());
+		System.out.println("Temperatura promedio = " + getTemperaturaMedia()+"ºC");
+		System.out.println("Altitud = " + getAltitud()+"m");
 	}
 }

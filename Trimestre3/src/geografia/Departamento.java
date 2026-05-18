@@ -15,9 +15,9 @@ public class Departamento {
 	public String getNombre() {
 	    return nombre;
 	}
-	private void setNombre(String nombre) {
+	/*private void setNombre(String nombre) {
 	    this.nombre = nombre;
-	}
+	}*/
     
 	public void agregarMunicipio(Municipio municipio) {
 	    municipios.add(municipio);
@@ -46,7 +46,7 @@ public class Departamento {
                 break;
             }
             if (!nombre.equals(municipio.getNombre())) { 
-                System.out.println("Municipio no encontrado.");
+                System.out.println("Municipio no encontrado");
             }
         }
 	}

@@ -20,29 +20,36 @@ public class test {
 
         Departamento provinciaOurense = new Departamento("Ourense", new ArrayList<Municipio>());
 
-        // --- PRUEBAS DE FUNCIONAMIENTO ---
+        //probiñas
 
-        System.out.println("--- Informe de Galicia ---");
+        System.out.println("-----GALICIA------");
         
-        // Prueba 1: Calcular población total
-        System.out.println("Censo en " + provinciaCoruna.getNombre() + ": " + 
-                           provinciaCoruna.calcularCensoPoblaciónDepartamento() + " habitantes.");
+        //Calcular población total
+        System.out.println(provinciaCoruna.getNombre() + ": " + provinciaCoruna.calcularCensoPoblaciónDepartamento() + " habitantes.");
         
-        // Prueba 2: Buscar municipio con población mayor a un límite
-        System.out.println("\nMunicipios en Lugo con más de 50.000 habitantes:");
+        System.out.println("------");
+
+        //Buscar municipio con población mayor a un límite
+        System.out.println("Municipios en Lugo con más de 50.000 habitantes:");
         provinciaLugo.buscarMunicipioConPoblaciónMayor(50000);
 
-        // Prueba 3: Buscar un municipio específico
-        System.out.println("\nBuscando información de Santiago:");
+        System.out.println("------");
+        
+        // Buscar un municipio específico
+        System.out.println("Buscando información de Santiago:");
         provinciaCoruna.buscarMunicipio("Santiago de Compostela");
 
-        // Prueba 4: Eliminar un municipio y recalcular
-        System.out.println("\nEliminando Monforte de Lemos de Lugo...");
+        System.out.println("------");
+
+        //Eliminar un municipio y recalcular
+        System.out.println("Censo de Lugo: " + provinciaLugo.calcularCensoPoblaciónDepartamento());
+        System.out.println("Eliminando Monforte de Lemos de Lugo...");
         provinciaLugo.eliminarMunicipio("Monforte de Lemos");
         System.out.println("Nuevo censo de Lugo: " + provinciaLugo.calcularCensoPoblaciónDepartamento());
 
-        // Prueba 5: Departamento vacío
-        System.out.println("\nCenso de " + provinciaOurense.getNombre() + ": " + 
-                           provinciaOurense.calcularCensoPoblaciónDepartamento());
+        System.out.println("------");
+
+        // Departamento vacio
+        System.out.println("Censo de " + provinciaOurense.getNombre() + ": " + provinciaOurense.calcularCensoPoblaciónDepartamento());
     }
 }
