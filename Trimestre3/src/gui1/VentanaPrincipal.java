@@ -39,7 +39,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         inicio();
 
         setTitle("Personas"); // Establece el título de la ventana
-        setSize(270,350); // Establece el tamaño de la ventana
+        setSize(270,390); // Establece el tamaño de la ventana
         setLocationRelativeTo(null); /* La ventana se posiciona en el
         centro de la pantalla */
         // Establece que el botón de cerrar permitirá salir de la aplicación
@@ -128,6 +128,32 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         guardar.setBounds(120, 280, 120, 23); 
         guardar.addActionListener(this);
 
+        //boton añadir
+        annadir = new JButton();
+        annadir.setText("Añadir");
+        annadir.setBounds(105, 150, 80, 23);
+        annadir.addActionListener(this);
+
+        // Botón Eliminar
+        eliminar = new JButton("Eliminar");
+        eliminar.setBounds(20, 280, 80, 23);
+        eliminar.addActionListener(this);
+
+        // Botón Borrar Lista
+        borrarLista = new JButton("Borrar Lista");
+        borrarLista.setBounds(120, 280, 120, 23);
+        borrarLista.addActionListener(this);
+
+        // Botón Cargar Lista (Movido hacia abajo para que no se superponga)
+        cargar = new JButton("Cargar");
+        cargar.setBounds(20, 315, 80, 23); 
+        cargar.addActionListener(this);
+
+        // Botón Guardar Lista (Movido hacia abajo para que no se superponga)
+        guardar = new JButton("Guardar");
+        guardar.setBounds(120, 315, 120, 23); 
+        guardar.addActionListener(this);
+
 
         // Establece la lista gráfica de personas
         listaNombres = new JList<>();
@@ -179,7 +205,13 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
             borrarLista(); // Se invoca borrar lista
         }
 
-        //AÑADIR EVENTOS DE CARGAR Y GUARDAR
+        //NUEVOS
+        if (evento.getSource() == guardar) { // <--- NUEVO
+            guardarListaEnArchivo();
+        }
+        if (evento.getSource() == cargar) {  // <--- NUEVO
+            cargarListaDesdeArchivo();
+        }
     }
 
     /**
@@ -231,4 +263,43 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         lista.borrarLista(); // Se eliminan todas las personas del vector
         modelo.clear(); // Limpia el JList, la lista gráfica de personas
     }
+
+    /**
+     * Llama al método para guardar los datos en el archivo .dat
+     */
+    private void guardarListaEnArchivo() {
+        try {
+            lista.guardarEnFicher();;
+            JOptionPane.showMessageDialog(this, "Lista guardada exitosamente en personal.dat", "Guardado", JOptionPane.INFORMATION_MESSAGE);
+        } catch (java.io.IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    /**
+     * Carga los datos del archivo .dat y regenera la lista visual (JList)
+     */
+    private void cargarListaDesdeArchivo() {
+        try {
+            lista.cargarDesdeFichero();
+            
+            // Limpiamos el modelo visual actual
+            modelo.clear();
+            
+            // Recorremos la lista recuperada para rellenar el JList de la ventana
+            for (Persona p : lista.getListaPersonas()) {
+                String elemento = p.nombre + "-" + p.apellidos + "-" + p.telefono + "-" + p.direccion;
+                modelo.addElement(elemento);
+            }
+            listaNombres.setModel(modelo);
+            
+            JOptionPane.showMessageDialog(this, "Lista cargada exitosamente desde personal.dat", "Carga Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (java.io.FileNotFoundException e) {
+            JOptionPane.showMessageDialog(this, "No se encontró el archivo 'personal.dat'. ¡Guarda algo primero!", "Archivo no encontrado", JOptionPane.WARNING_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+
 }
