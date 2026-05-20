@@ -300,6 +300,4 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(this, "Error al cargar el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-
 }
