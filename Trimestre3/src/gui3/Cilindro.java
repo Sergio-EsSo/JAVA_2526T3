@@ -1,0 +1,40 @@
+package gui3;
+
+public class Cilindro extends FiguraGeometrica {
+    private double radio; // Atributo que establece el radio de un cilindro
+    private double altura; // Atributo que establece la altura de un cilindro
+
+    /**
+    * Constructor de la clase Cilindro
+    * @param radio Parámetro de define el radio de un cilindro
+    * @param altura Parámetro de define la altura de un cilindro
+    */
+    public Cilindro(double radio, double altura) {
+        this.radio = radio;
+        this.altura = altura;
+        this.setVolumen(calcularVolumen()); /* Calcula el volumen y establece su atributo */
+        this.setSuperficie(calcularSuperficie()); /* Calcula la superficie y establece su atributo */
+    }
+    /**
+    * Método para calcular el volumen de un cilindro
+    * @return El volumen de un cilindro
+    */
+    public double calcularVolumen() {
+        double volumen = Math.PI * altura * Math.pow(radio, 2d);
+        return volumen;
+    }
+    /**
+    * Método para calcular la superficie de un cilindro
+    * @return La superficie de un cilindro
+    */
+    public double calcularSuperficie() {
+        double areaLadoA = 2d * Math.PI * radio * altura;
+        double areaLadoB = 2d * Math.PI * Math.pow(radio, 2d);
+        return areaLadoA + areaLadoB;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\nCilindro [radio=" + radio + ", altura=" + altura + "]";
+    }    
+}
