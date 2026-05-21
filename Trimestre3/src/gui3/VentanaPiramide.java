@@ -7,14 +7,14 @@ import java.awt.event.ActionListener;
 
 public class VentanaPiramide extends JFrame implements ActionListener {
     private Container contenedor;
-    private JLabel base, altura, apotema, volumen, superficie;
-    private JTextField campoBase, campoAltura, campoApotema;
+    private JLabel base, altura, volumen, superficie, apotema;
+    private JTextField campoBase, campoAltura;
     private JButton calcular;
 
     public VentanaPiramide() {
         inicio();
         setTitle("Pirámide");
-        setSize(300, 300);
+        setSize(300, 295);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -34,28 +34,25 @@ public class VentanaPiramide extends JFrame implements ActionListener {
         campoAltura = new JTextField();
         campoAltura.setBounds(120, 60, 135, 23);
 
-        apotema = new JLabel("Apotema (cms):");
-        apotema.setBounds(20, 100, 100, 23);
-        campoApotema = new JTextField();
-        campoApotema.setBounds(120, 100, 135, 23);
-
         calcular = new JButton("Calcular");
-        calcular.setBounds(120, 140, 135, 23);
+        calcular.setBounds(120, 100, 135, 23);
         calcular.addActionListener(this);
 
         volumen = new JLabel("Volumen (cm3): 0,00");
-        volumen.setBounds(20, 180, 240, 23);
+        volumen.setBounds(20, 140, 240, 23);
 
         superficie = new JLabel("Superficie (cm2): 0,00");
-        superficie.setBounds(20, 215, 240, 23);
+        superficie.setBounds(20, 175, 240, 23);
+
+        apotema = new JLabel("Apotema (cm): 0,00");
+        apotema.setBounds(20, 210, 240, 23);
 
         contenedor.add(base);
         contenedor.add(campoBase);
         contenedor.add(altura);
         contenedor.add(campoAltura);
-        contenedor.add(apotema);
-        contenedor.add(campoApotema);
         contenedor.add(calcular);
+        contenedor.add(apotema);
         contenedor.add(volumen);
         contenedor.add(superficie);
     }
@@ -68,9 +65,11 @@ public class VentanaPiramide extends JFrame implements ActionListener {
                 double h = Double.parseDouble(campoAltura.getText());
                 
                 Piramide p = new Piramide(b, h);
-                
+
+                                
                 volumen.setText(String.format("Volumen (cm3): %.2f", p.calcularVolumen()));
                 superficie.setText(String.format("Superficie (cm2): %.2f", p.calcularSuperficie()));
+                apotema.setText(String.format("Apotema (cm): %.2f", p.calcularApotema()));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Error: Verifica los valores ingresados.", "Error", JOptionPane.ERROR_MESSAGE);
             }
