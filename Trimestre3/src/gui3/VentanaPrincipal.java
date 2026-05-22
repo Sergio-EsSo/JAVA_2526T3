@@ -7,14 +7,12 @@ import java.awt.event.ActionListener;
 
 public class VentanaPrincipal extends JFrame implements ActionListener {
     private Container contenedor;
-    private JButton cilindro;
-    private JButton esfera;
-    private JButton piramide;
+    private JButton cilindro, esfera, piramide, cono, cubo, prisma;
 
     public VentanaPrincipal() {
         inicio();
         setTitle("Figuras");
-        setSize(450, 180);
+        setSize(450, 200);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -33,9 +31,21 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         piramide = new JButton("Pirámide");
         piramide.addActionListener(this);
 
+        cono = new JButton("Cono");
+        cono.addActionListener(this);
+
+        cubo = new JButton("Cubo");
+        cubo.addActionListener(this);
+
+        prisma = new JButton("Prisma");
+        prisma.addActionListener(this);
+
         contenedor.add(cilindro);
         contenedor.add(esfera);
         contenedor.add(piramide);
+        contenedor.add(cono);
+        contenedor.add(cubo);
+        contenedor.add(prisma);
     }
 
     @Override
@@ -49,6 +59,15 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         } else if (evento.getSource() == piramide) {
             VentanaPiramide vPiramide = new VentanaPiramide();
             vPiramide.setVisible(true);
+        } else if (evento.getSource() == cono) {
+            VentanaCono vCono = new VentanaCono();
+            vCono.setVisible(true);
+        } else if (evento.getSource() == cubo) {
+            VentanaCubo vCubo = new VentanaCubo();
+            vCubo.setVisible(true);
+        } else if (evento.getSource() == prisma) {
+            VentanaPrisma vPrisma = new VentanaPrisma();
+            vPrisma.setVisible(true);
         }
     }
 
