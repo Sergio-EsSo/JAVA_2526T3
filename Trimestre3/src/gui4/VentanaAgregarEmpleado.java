@@ -41,6 +41,8 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.setLayout(null);
 
 		// Inicialización de etiquetas y campos
+
+		//NOMBRE
 		nombre = new JLabel("Nombre:");
 		nombre.setBounds(20, 20, 100, 23);
 		campoNombre = new JTextField();
@@ -48,6 +50,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(nombre);
 		contenedor.add(campoNombre);
 
+		//APELLIDOS
 		apellidos = new JLabel("Apellidos:");
 		apellidos.setBounds(20, 50, 100, 23);
 		campoApellidos = new JTextField();
@@ -55,6 +58,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(apellidos);
 		contenedor.add(campoApellidos);
 
+		//CARGO
 		cargo = new JLabel("Cargo:");
 		cargo.setBounds(20, 80, 100, 23);
 		campoCargo = new JComboBox<>(TipoCargo.values());
@@ -62,12 +66,16 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(cargo);
 		contenedor.add(campoCargo);
 
+		//GENERO
 		genero = new JLabel("Género:");
 		genero.setBounds(20, 110, 100, 23);
+
 		masculino = new JRadioButton("Masculino", true);
 		masculino.setBounds(140, 110, 140, 23);
+
 		femenino = new JRadioButton("Femenino");
 		femenino.setBounds(140, 135, 140, 23);
+
 		grupoGenero = new ButtonGroup();
 		grupoGenero.add(masculino);
 		grupoGenero.add(femenino);
@@ -75,6 +83,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(masculino);
 		contenedor.add(femenino);
 
+		//SALARIO
 		salarioDia = new JLabel("Salario por día:");
 		salarioDia.setBounds(20, 165, 100, 23);
 		campoSalarioDia = new JTextField();
@@ -82,6 +91,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(salarioDia);
 		contenedor.add(campoSalarioDia);
 
+		//DIAS TRABAJDOS
 		numeroDias = new JLabel("Días trabajados al mes:");
 		numeroDias.setBounds(20, 195, 130, 23);
 		modeloSpinner = new SpinnerNumberModel(30, 1, 30, 1); // Valor inicial 30, min 1, max 30, paso 1
@@ -90,6 +100,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(numeroDias);
 		contenedor.add(campoNumeroDias);
 
+		//PLUS Y EXTRAS
 		otrosIngresos = new JLabel("Otros ingresos:");
 		otrosIngresos.setBounds(20, 225, 100, 23);
 		campoOtrosIngresos = new JTextField();
@@ -97,6 +108,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(otrosIngresos);
 		contenedor.add(campoOtrosIngresos);
 
+		//APORTES DE SALUD
 		aportesSalud = new JLabel("Pagos por salud:");
 		aportesSalud.setBounds(20, 255, 100, 23);
 		campoAportesSalud = new JTextField();
@@ -104,6 +116,7 @@ public class VentanaAgregarEmpleado extends JFrame implements ActionListener {
 		contenedor.add(aportesSalud);
 		contenedor.add(campoAportesSalud);
 
+		//PENSIONES
 		pensiones = new JLabel("Aportes pensiones:");
 		pensiones.setBounds(20, 285, 120, 23);
 		campoPensiones = new JTextField();
