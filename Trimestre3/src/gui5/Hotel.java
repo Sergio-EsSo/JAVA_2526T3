@@ -74,11 +74,7 @@ public class Hotel {
 	 */
 	public boolean buscarHabitacionOcupada(int numero) {
 		for (int i = 0; i < listaHabitaciones.size(); i++) {
-<<<<<<< HEAD
-			// Recorre el vector de habitaciones
-=======
 			/* Recorre el vector de habitaciones */
->>>>>>> 8cf8ff344d51b8f0f0f7af8909d6bb70ed96ff04
 			// Obtiene un elemento del vector
 			Habitacion Habitacion = (Habitacion) listaHabitaciones.get(i);
 			if (Habitacion.getNumeroHabitacion() == numero && !Habitacion.getDisponible()) {
